@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/3441cdc91e.js" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+            position: sticky;
+            z-index: 10;
+            left: 0;
+            right: 0;
+            top: 0;
+            display: flex;
+            background-color: rgb(27, 184, 231);
+        }
+
+        .logo-1 {
+            margin: 16px;
+        }
+
+        nav .logo {
+            margin: 14px;
+            font-size: 24px;
+            color: white;
+        }
+
+        nav .links {
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav .links li {
+            list-style: none;
+        }
+
+        nav .links a {
+            display: block;
+            padding: 20px 25px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .image-drop {
+            margin: 14px;
+        }
+
+        .drop {
+            height: 33px;
+            width: 33px;
+            border-radius: 20px;
+        }
+
+        .Hardik {
+            height: 30px;
+            width: 30px;
+            border-radius: 18px;
+        }
+
+        #nav-toggle {
+            position: absolute;
+            top: -100px;
+        }
+
+        nav .icon-burger {
+            display: none;
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        nav .icon-burger .line {
+            width: 30px;
+            height: 5px;
+            background-color: #fff;
+            margin: 5px;
+            border-radius: 3px;
+            transition: all .3s ease-in-out;
+        }
+
+        .img-resp {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav .logo {
+                float: none;
+                width: auto;
+                justify-content: center;
+            }
+
+            .image-drop {
+                display: none;
+            }
+
+            .img-resp {
+                display: block;
+            }
+
+            nav .links {
+                float: none;
+                position: fixed;
+                z-index: 9;
+                left: 0;
+                right: 0;
+                top: 55px;
+                bottom: 100%;
+                height: auto;
+                width: auto;
+                flex-direction: column;
+                justify-content: space-evenly;
+                background-color: lightblue;
+                overflow: hidden;
+                transition: all .5s ease-in-out;
+            }
+
+            nav .links a {
+                font-size: 20px;
+            }
+
+            nav :checked~.links {
+                bottom: 0;
+            }
+
+            nav .icon-burger {
+                display: block;
+            }
+
+            nav :checked~.icon-burger .line:nth-child(1) {
+                transform: translateY(10px) rotate(225deg);
+            }
+
+            nav :checked~.icon-burger .line:nth-child(3) {
+                transform: translateY(-10px) rotate(-225deg);
+            }
+
+            nav :checked~.icon-burger .line:nth-child(2) {
+                opacity: 0;
+            }
+        }
+
+        .container-img {
+            height: 400px;
+            /* background: url(Images/home.jpg) no-repeat center center/cover; */
+        }
+
+        .container-img img {
+            height: 400px;
+            width: 100%;
+            z-index: -2;
+            position: relative;
+        }
+
+        .contact-us {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+            margin-top: -50px;
+            /* opacity: 0.6; */
+        }
+
+        /* .contact-us::before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        background-color: white;
+        justify-content: center;
+        margin-top: -50px;
+        opacity: 0.6;
+    } */
+
+        .contact-1 {
+            /* background-color: rgb(207, 29, 29); */
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: center;
+            align-items: center;
+            margin: -35px auto;
+            /* opacity: 0.8; */
+        }
+
+        .contact-1::before{
+            content: "";
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            position: absolute;
+            background-color: rgb(207, 40, 40);
+            border-radius: 10px;
+            color: white;
+            opacity: 0.5;
+            height: 100%;
+            width: 100%;
+        }
+
+        .contact-1 i{
+            /* margin: 12px 50px; */
+            color: black;
+        }
+
+        .contact-2 {
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 60px auto;
+        }
+
+        @media screen and (max-width:768px) {
+            .contact-us {
+                flex-direction: column;
+            }
+        }
+
+        .footer {
+            /* height:10vh; 
+            width: 100vw;  */
+            background-color: rgb(11, 191, 236);
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            /* position: relative; */
+            /* position: sticky;
+            top: 100%; */
+        }
+
+        .footer-icon {
+            margin: 15px 25px;
+            font-size: 35px;
+        }
+
+        @media screen and (max-width:700px) {
+            .footer-icon {
+                margin: 15px 8px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!------Header-->
+    <nav>
+        <input id="nav-toggle" type="checkbox">
+        <div class="logo-1">
+            <img src="z-techclogo.png" style="width: 100px;" alt="">
+        </div>
+        <ul class="links">
+            <img src="ztechimage.png" class=" img img-resp" alt="">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Certificate</a></li>
+            <li><a href="#">Verification</a></li>
+        </ul>
+        <div class="image-drop">
+            <!-- <img src="ztechimage.png" class="img" alt=""> -->
+            <div class="dropdown float-right">
+                <div data-toggle="dropdown">
+                    <img src="Images/hardik.jpeg" class="drop" alt="">
+                </div>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </div>
+        </div>
+        <label for="nav-toggle" class="icon-burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
+    </nav>
+
+    <div class="container-img">
+        <img src="Images/home.jpg" alt="Hardik">
+    </div>
+
+    <div class=" col-sm-12 col-md-8 col-lg-5 contact-1 ">
+        <a href="https://www.youtube.com/"><i class="fas fa-4x fa-phone-alt mx-3 mx-sm-5 mx-md-5 mx-lg-5 my-3"></i></a>
+        <a href=""><i class="fas fa-4x fa-envelope mx-3 mx-sm-5 mx-md-5 mx-lg-5 my-3"></i></a>
+        <a href=""><i class="fab fa-4x fa-whatsapp mx-3 mx-sm-5 mx-md-5 mx-lg-5 my-3"></i></a>
+    </div>
+
+    <div class="contact-2 col-lg-6">
+        <form class="row m-1 ">
+            <div class="row m-3 ">
+                <div class="col-lg-12 ">
+                    <label for="validationDefault05" class="form-label font" >Subject</label>
+                    <input type="text" class="form-control h-75" id="validationDefault05" required>
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-lg-12 ">
+                    <label for="validationDefault05" class="form-label font">E-mail</label>
+                    <input type="email" class="form-control h-75" id="validationDefault05" required>
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-lg-12 ">
+                    <label for="validationDefault05" class="form-label font">Message</label><br>
+                    <textarea name="" id="" cols="90" rows="5"></textarea>
+                    <!-- <input type="email" class="form-control h-75" id="validationDefault05" required> -->
+                </div>
+            </div>
+            <div class="col-lg-12 ">
+                <button class="btn btn-dark mx-auto d-block my-3 w-50 py-2" type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3537.0092324606126!2d76.59911751492749!3d27.562223938461745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3972998498513025%3A0x5caabd8e3542948!2sAlwar%20Bus%20Stand!5e0!3m2!1sen!2sin!4v1632418215191!5m2!1sen!2sin"
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- <div class="address bg-danger text-center ">
+        <pre>
+            Ambedkar Circle,
+            Near Viraj Tower,
+            ALwar Rajasthan 301001
+        </pre>
+    </div> -->
+
+    <div class="footer">
+        <a href=""><i class="fab fa-github text-white footer-icon"></i></a> 
+        <a href=""><i class="fab fa-twitter text-white footer-icon"></i></a> 
+        <a href=""><i class="fab fa-pinterest-p text-white footer-icon"></i></a>
+        <a href=""><i class="fab fa-youtube text-white footer-icon"></i></a> 
+        <a href=""><i class="fab fa-facebook text-white footer-icon"></i></a>  
+        <a href=""><i class="fab fa-instagram text-white footer-icon"></i></a>   
+        <a href=""><i class="fab fa-snapchat text-white footer-icon"></i></a>  
+        <a href=""><i class="fab fa-linkedin text-white footer-icon"></i></a>
+    <div>
+</body>
+
+</html>
